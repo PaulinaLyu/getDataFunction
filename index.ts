@@ -13,8 +13,8 @@ const getData = async (url: string) => {
 };
 
 getData(COMMENTS_URL)
-  .then((response) => response.json())
-  .then((json: IComment[]) => {
+  .then((response): Promise<IComment[]> => response.json())
+  .then((json) => {
     json.map((item) => {
       console.log(`ID: ${item.id}, Email: ${item.email}`);
     });
